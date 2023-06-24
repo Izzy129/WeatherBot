@@ -1,5 +1,5 @@
-const {SlashCommandBuilder, ChannelType} = require('discord.js');
-const { joinVoiceChannel, getVoiceConnections, getVoiceConnection } = require('@discordjs/voice');
+const {SlashCommandBuilder} = require('discord.js');
+const {getVoiceConnection} = require('@discordjs/voice');
 
 const data = new SlashCommandBuilder()
     .setName('disconnect')
