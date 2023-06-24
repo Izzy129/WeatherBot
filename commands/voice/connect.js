@@ -19,7 +19,7 @@ module.exports = {
             adapterCreator: interaction.guild.voiceAdapterCreator
         });
 
-        // console.log(getVoiceConnections());
+        console.log(getVoiceConnections());
         await interaction.reply('Connected!');
         
     }
