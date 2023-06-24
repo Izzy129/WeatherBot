@@ -7,7 +7,12 @@ const { Client, Collection, GatewayIntentBits } = require('discord.js');
 const token = process.env.DISCORD_TOKEN; // more secure than storing the token in plain text
 
 // Create a new client instance
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client({
+	intents: [
+		GatewayIntentBits.Guilds,
+		GatewayIntentBits.GuildVoiceStates 
+	] 
+});
 
 client.commands = new Collection();
 const foldersPath = path.join(__dirname, 'commands');
