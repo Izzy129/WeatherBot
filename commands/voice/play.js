@@ -3,8 +3,13 @@ const {joinVoiceChannel, getVoiceConnections, createAudioPlayer, NoSubscriberBeh
 
 const data = new SlashCommandBuilder()
     .setName('play')
-    .setDescription('Play some music! 🎶');
+    .setDescription('Play some music! 🎶')
+    .addStringOption(option =>
+         option.setName('song')
+        .setDescription('The link of the song to play (must be a raw .mp3 file)')
+        .setRequired(true));
 
+        
 module.exports = {
     data: data,
     async execute(interaction) {
@@ -14,7 +19,6 @@ module.exports = {
                 guildId: interaction.guildId,
                 adapterCreator: interaction.guild.voiceAdapterCreator
             });
-            // await interaction.reply('Connected to <#' + interaction.member.voice.channelId + '>!');
         } 
         // at this point the bot should be connected to a voice channel already
         // not the user's though, add checks for that later
@@ -26,7 +30,7 @@ module.exports = {
             },
         });
 
-        const resource = createAudioResource('commands\\voice\\audio.mp3');
+        const resource = createAudioResource(interaction.options.getString('song'));
         const connection = getVoiceConnections().get(interaction.guildId);
         
         connection.subscribe(player); // 
