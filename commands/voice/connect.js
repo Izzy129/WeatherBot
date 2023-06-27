@@ -10,7 +10,11 @@ module.exports = {
         if (getVoiceConnections().has(interaction.guildId)) {
             await interaction.reply('Bot is already in a voice channel! \nPlease disconnect before requesting!');
             return;
+        } else if (!interaction.member.voice.channelId) {
+            await interaction.reply('You must be in a voice channel to use this command!');
+            return;
         }
+        
         joinVoiceChannel({
             channelId: interaction.member.voice.channelId,
             guildId: interaction.guildId,
