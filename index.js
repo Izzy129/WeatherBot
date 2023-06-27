@@ -3,7 +3,6 @@ require('dotenv').config();
 const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, GatewayIntentBits } = require('discord.js');
-// const { token } = require('./config.json');
 const token = process.env.DISCORD_TOKEN; // more secure than storing the token in plain text
 
 // Create a new client instance
@@ -46,6 +45,8 @@ for (const file of eventFiles) {
 	}
 }
 
+// client.on('debug', console.log)
+//       .on('warn', console.log)
 
 // Log in to Discord with your client's token
 client.login(token);
