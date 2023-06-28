@@ -19,9 +19,10 @@ module.exports = {
                 guildId: interaction.guildId,
                 adapterCreator: interaction.guild.voiceAdapterCreator
             });
-        } 
-        // at this point the bot should be connected to a voice channel already
-        // not the user's though, add checks for that later
+        } else if (!interaction.member.voice.channelId) {
+            await interaction.reply('You must be in a voice channel to use this command!');
+            return;
+        }
 
 
         const player = createAudioPlayer({

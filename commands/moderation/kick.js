@@ -1,5 +1,4 @@
-//slash command with discord.js v13 to kick a member
-
+// this does not work yet, it is a work in progress
 const { SlashCommandBuilder } = require('discord.js');
 
 module.exports = {

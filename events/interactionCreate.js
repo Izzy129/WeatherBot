@@ -13,7 +13,7 @@ module.exports = {
 		}
 
 		try {
-			var ts = interaction.createdAt;
+			const ts = interaction.createdAt;
 			// format the timestamp in this format: [MM/DD/YYYY | HH:MM:SS]
 			const month = (ts.getMonth() + 1).toString().padStart(2, '0');
 			const day = ts.getDate().toString().padStart(2, '0');
