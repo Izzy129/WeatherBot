@@ -13,15 +13,27 @@ const data = new SlashCommandBuilder()
 module.exports = {
     data: data,
     async execute(interaction) {
+        if (!interaction.member.voice.channelId) {
+            await interaction.reply('You must be in a voice channel to use this command!');
+            return;
+        } 
+
+        const resource = createAudioResource(interaction.options.getString('song'));
+        resource.metadata = {
+            title: interaction.options.getString('song').split('/').pop(),
+            url: interaction.options.getString('song'),
+        };
+        if (!resource.metadata.title.includes('.mp3')) {
+            await interaction.reply('Please provide a raw .mp3 file!');
+            return;
+        }
+
         if (!getVoiceConnections().has(interaction.guildId)) { // if bot is not in a voice channel
             joinVoiceChannel({
                 channelId: interaction.member.voice.channelId,
                 guildId: interaction.guildId,
                 adapterCreator: interaction.guild.voiceAdapterCreator
             });
-        } else if (!interaction.member.voice.channelId) {
-            await interaction.reply('You must be in a voice channel to use this command!');
-            return;
         }
 
 
@@ -30,13 +42,10 @@ module.exports = {
                 noSubscriber: NoSubscriberBehavior.Pause,
             },
         });
-
-        const resource = createAudioResource(interaction.options.getString('song'));
         const connection = getVoiceConnections().get(interaction.guildId);
-        
         connection.subscribe(player); // 
         player.play(resource);
 
-        await interaction.reply('Playing audio.mp3!');
+        await interaction.reply('Playing ' + resource.metadata.title + '!');
     }
 };

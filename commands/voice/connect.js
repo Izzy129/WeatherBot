@@ -1,6 +1,5 @@
 const {SlashCommandBuilder} = require('discord.js');
 const { joinVoiceChannel, getVoiceConnections } = require('@discordjs/voice');
-
 const data = new SlashCommandBuilder()
     .setName('connect')
     .setDescription('Connects the bot to a voice channel');        
