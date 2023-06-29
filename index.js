@@ -1,15 +1,16 @@
 // Require the necessary discord.js classes
-require('dotenv').config();
 const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, GatewayIntentBits } = require('discord.js');
+require('dotenv').config();
 const token = process.env.DISCORD_TOKEN; // more secure than storing the token in plain text
+
 
 // Create a new client instance
 const client = new Client({
 	intents: [
 		GatewayIntentBits.Guilds,
-		GatewayIntentBits.GuildVoiceStates 
+		GatewayIntentBits.GuildVoiceStates, 
 	] 
 });
 
@@ -44,7 +45,6 @@ for (const file of eventFiles) {
 		client.on(event.name, (...args) => event.execute(...args));
 	}
 }
-
 
 // Log in to Discord with your client's token
 client.login(token);
