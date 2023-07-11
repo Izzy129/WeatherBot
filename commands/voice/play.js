@@ -7,7 +7,8 @@ const data = new SlashCommandBuilder()
     .addStringOption(option =>
          option.setName('song')
         .setDescription('The link of the song to play (must be a raw .mp3 file)')
-        .setRequired(true));
+        .setRequired(true)
+    );
 
         
 module.exports = {
