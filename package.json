@@ -119,6 +119,7 @@
     "wrappy": "^1.0.2",
     "ws": "^8.13.0",
     "yocto-queue": "^0.1.0",
+    "yt-stream": "^1.4.8",
     "ytdl-core": "^4.11.4"
   },
   "scripts": {
