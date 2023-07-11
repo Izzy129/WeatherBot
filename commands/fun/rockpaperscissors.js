@@ -1,5 +1,6 @@
 const {SlashCommandBuilder, ButtonBuilder, ButtonStyle ,ActionRowBuilder} = require('discord.js');
-const {rps} = require('C:\\Users\\Izzy\\Desktop\\WeatherBot\\commands\\fun\\rpsLogic.js');
+const {rps} = require('C:\\Users\\Izzy\\Desktop\\BaraBot\\commands\\fun\\rpsLogic.js');
+
 const data = new SlashCommandBuilder()
     .setName('rps')
     .setDescription('Play rock paper scissors with the bot! 🪨 📄 ✂️');
