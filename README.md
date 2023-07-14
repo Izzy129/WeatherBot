@@ -4,7 +4,7 @@ yet another multipurpose discord bot
 will add a feature list and help later 
 
 
-## usage
+## Installation
 1. Install [Node.JS](https://nodejs.org/en/download). I use v16.13.0, so if the bot isn't working and you are on another version try that version.
 2. Install compiled [FFmpeg](https://ffmpeg.org/download.html) for your system. The latest version should work fine.
 3. Clone the repository via `git clone https://github.com/Izzy129/barabot.git` or downloading ZIP through GitHub
