@@ -1,0 +1,3 @@
+DISCORD_TOKEN = put ur bot's token here
+WEATHER_API_KEY = api key for weather calls
+OWNER_ID = your user id
