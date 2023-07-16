@@ -1,5 +1,5 @@
 const {SlashCommandBuilder, ButtonBuilder, ButtonStyle ,ActionRowBuilder} = require('discord.js');
-const {rps} = require('C:\\Users\\Izzy\\Desktop\\BaraBot\\commands\\fun\\rpsLogic.js');
+const {rps} = require('C:\\Users\\Izzy\\Desktop\\BaraBot\\extra\\rpsLogic.js');
 
 const data = new SlashCommandBuilder()
     .setName('rps')
