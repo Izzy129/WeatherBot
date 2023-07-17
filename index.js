@@ -25,9 +25,10 @@ const client = new Client({
 // Create a new Player, and attach it to the bot client.
 const player = new Player(client);
 
-// If you dont want to use all of the extractors and register only the required ones manually, use
- player.extractors.register(SpotifyExtractor, {});
- player.extractors.register(YouTubeExtractor, {});
+// loads all extractors (Spotify, Youtube, Soundcloud...)
+player.extractors.loadDefault();
+
+
 
  player.events.on('error', (queue, error) => {
     // Emitted when the player queue encounters error
