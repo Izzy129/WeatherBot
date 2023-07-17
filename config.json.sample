@@ -1,0 +1,7 @@
+{
+    "clientId": get application id on discord dev portal,
+    "colorSuccess": "00ff40",
+    "colorError": "ff0000",
+    "colorWarning": "ffff00", 
+    "colorInfo": "0080ff"
+}
