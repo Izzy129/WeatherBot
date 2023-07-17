@@ -1,4 +1,7 @@
-const { SlashCommandBuilder } = require('discord.js');
+// todo: add error handler 
+
+const { SlashCommandBuilder, EmbedBuilder} = require('discord.js');
+const { colorSuccess } = require('../../config.json');
 const { request } = require('undici');
 
 
@@ -10,7 +13,10 @@ module.exports = {
         
         const jokeResult = await request('https://official-joke-api.appspot.com/jokes/random');
         const jokeData = await jokeResult.body.json();
-        const joke =  "**Joke #" + jokeData.id + "**\n" + jokeData.setup + "\n\n" + jokeData.punchline;        
-        await interaction.reply(joke);
+        const embed = new EmbedBuilder()
+            .setColor(colorSuccess)
+            .setTitle('Joke #' + jokeData.id)
+            .setDescription(jokeData.setup + '\n \n' + jokeData.punchline);
+        await interaction.reply({ embeds: [embed] });
     },
 };

@@ -3,10 +3,11 @@
 // rewrite the choice selection to be a number instead of a string
 // add a custom emoji option for custom activity
 
-const {SlashCommandBuilder, ActivityType} = require('discord.js');
+const {SlashCommandBuilder, ActivityType, EmbedBuilder} = require('discord.js');
 require('dotenv').config();
 const ownerId = process.env.OWNER_ID; 
 
+const {colorSuccess} = require('../../config.json');
 
 const data = new SlashCommandBuilder()
     .setName('activity')
@@ -72,7 +73,10 @@ module.exports = {
             activities: [{ name: activity, type: type}],
             status: interaction.options.getString('icon')
         });
-        await interaction.reply('activity set!');
-        
+        const embed = new EmbedBuilder()
+            .setColor(colorSuccess)
+            .setTitle("Activity set successfully!")
+            .setDescription("Activity set to " + activity + " with type " + type + " and icon " + interaction.options.getString('icon'));
+        await interaction.reply({embeds: [embed]});
     }
 };
