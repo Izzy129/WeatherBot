@@ -10,7 +10,7 @@ const { Player, onBeforeCreateStream} = require('discord-player');
 const { stream } = require('yt-stream');
 
 // get some extractors if you want to handpick sources
-const { SpotifyExtractor, YouTubeExtractor } = require('@discord-player/extractor');
+// const { SpotifyExtractor, YouTubeExtractor } = require('@discord-player/extractor');
 
 
 // Create a new client instance
