@@ -1,8 +1,21 @@
-# Barabot
-yet another multipurpose discord bot
+# Barabot - A multipurpose Discord.JS V14 bot.
 
-will add a feature list and help later 
+**Invite Link**: none atm as I sort out hosting the bot and releasing a proper version.
 
+**Features include**: 
+- Telling jokes with the use of Joke REST API.
+- Minigames like Rock Paper Scissors.
+- Retrieving weather via a Weather REST API based on user input.
+- Play music/videos over voice channels from sources like YouTube, Spotify, SoundCloud, Apple Music, and Vimeo.
+- Slash command support
+
+**Planned features**:
+- [ ] Fully music support with a queue, volume control, overlay effects, and more.
+- [ ] Basic moderation commands.
+- [ ] Image manipulation.
+- [ ] More minigames.
+- [ ] Possibly GPT-3.5 chatting if I sort out a proper host.
+ 
 
 ## Installation
 1. Install [Node.JS](https://nodejs.org/en/download). I use v16.13.0, so if the bot isn't working and you are on another version try that version.
